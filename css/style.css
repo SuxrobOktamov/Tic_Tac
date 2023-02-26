@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.row {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.list-item {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    height: 100%;
+}
+
+.item {
+    cursor: pointer;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 1rem;
+    background-color: #96c2d6;
+}
+
+.item #num {
+    display: none;
+}
+
+.delete-btn {
+    box-shadow: inset 0px 0px 74px 0px #73848b;
+    width: 150px;
+    height: 150px;
+    background-image: url(img/xmark.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+    background-color: #ccc;
+}
+
+.delete {
+    box-shadow:none;
+    width: 150px;
+    height: 150px;
+    background-image: url(img/xmark.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+    background-color: rgb(255, 140, 0);
+}
+
+.solid-btn {
+    box-shadow: inset 0px 0px 74px 0px #73848b;
+    width: 150px;
+    height: 150px;
+    background-image: url(img/o-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+    background-color: #ccc;
+}
+
+.solid {
+    width: 150px;
+    height: 150px;
+    background-image: url(img/o-solid.svg);
+    background-repeat: no-repeat;
+    background-size: 40%;
+    background-position: center center;
+    background-color: #ff9900;
+}
+
+p {
+    position: absolute;
+    bottom: 70px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+    font-weight: bold;
+    color: #444;
+    opacity: 0.7;
+    font-family: cursive;
+}
+
+.draw {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    opacity: .8;
+}
+
+.playerOne {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    opacity: .8;
+}
+
+.playerTwo {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 100;
+    opacity: .8;
+}
+
+
+
+.restart {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transform: translate(-50%, -50%);
+}
+
+button {
+    cursor: pointer;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    font-size: 16px;
+    background: #000;
+    padding: 10px 20px;
+    border-radius: 7px;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 2px;
+    transform: translate(-50%, -50%);
+}
