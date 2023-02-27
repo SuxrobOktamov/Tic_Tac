@@ -59,7 +59,7 @@ $(document).ready(function() {
 
     function winPlayerTwo() {
         newArr.forEach((item)=>{
-            if(arrListItem[item[0]].classList.contains('solid') && arrListItem[item[1]].classList.contains('delete') && arrListItem[item[2]].classList.contains('solid')){
+            if(arrListItem[item[0]].classList.contains('solid') && arrListItem[item[1]].classList.contains('solid') && arrListItem[item[2]].classList.contains('solid')){
                 $('.playerTwo').css('display', 'block');
                 $('.draw').css('display', 'none')
             }
