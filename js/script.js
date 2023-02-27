@@ -1,5 +1,16 @@
 $(document).ready(function() {
 
+    let newArr = [
+        [0, 1, 2],
+        [0, 4, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 4, 6],
+        [2, 5, 8],
+        [3, 4, 5],
+        [6, 7, 8],
+    ];
+    
     let arrListItem = $('.list-item li').toArray();
 
     $.each(arrListItem, function(i, item){
@@ -38,35 +49,21 @@ $(document).ready(function() {
     })
     
     function winPlayerOne() {
-        if(
-            arrListItem[0].classList.contains('delete') && arrListItem[1].classList.contains('delete') && arrListItem[2].classList.contains('delete') ||
-            arrListItem[0].classList.contains('delete') && arrListItem[4].classList.contains('delete') && arrListItem[8].classList.contains('delete') ||
-            arrListItem[0].classList.contains('delete') && arrListItem[3].classList.contains('delete') && arrListItem[6].classList.contains('delete') ||
-            arrListItem[1].classList.contains('delete') && arrListItem[4].classList.contains('delete') && arrListItem[7].classList.contains('delete') ||
-            arrListItem[2].classList.contains('delete') && arrListItem[4].classList.contains('delete') && arrListItem[6].classList.contains('delete') ||
-            arrListItem[2].classList.contains('delete') && arrListItem[5].classList.contains('delete') && arrListItem[8].classList.contains('delete') ||
-            arrListItem[3].classList.contains('delete') && arrListItem[4].classList.contains('delete') && arrListItem[5].classList.contains('delete') ||
-            arrListItem[6].classList.contains('delete') && arrListItem[7].classList.contains('delete') && arrListItem[8].classList.contains('delete')
-        ){
-            $('.playerOne').css('display', 'block');
-            $('.draw').css('display', 'none');
-        }
+        newArr.forEach((item)=>{
+            if(arrListItem[item[0]].classList.contains('delete') && arrListItem[item[1]].classList.contains('delete') && arrListItem[item[2]].classList.contains('delete')){
+                $('.playerOne').css('display', 'block');
+                $('.draw').css('display', 'none');
+            }
+        })
     }
 
     function winPlayerTwo() {
-        if(
-            arrListItem[0].classList.contains('solid') && arrListItem[1].classList.contains('solid') && arrListItem[2].classList.contains('solid') ||
-            arrListItem[0].classList.contains('solid') && arrListItem[4].classList.contains('solid') && arrListItem[8].classList.contains('solid') ||
-            arrListItem[0].classList.contains('solid') && arrListItem[3].classList.contains('solid') && arrListItem[6].classList.contains('solid') ||
-            arrListItem[1].classList.contains('solid') && arrListItem[4].classList.contains('solid') && arrListItem[7].classList.contains('solid') ||
-            arrListItem[2].classList.contains('solid') && arrListItem[4].classList.contains('solid') && arrListItem[6].classList.contains('solid') ||
-            arrListItem[2].classList.contains('solid') && arrListItem[5].classList.contains('solid') && arrListItem[8].classList.contains('solid') ||
-            arrListItem[3].classList.contains('solid') && arrListItem[4].classList.contains('solid') && arrListItem[5].classList.contains('solid') ||
-            arrListItem[6].classList.contains('solid') && arrListItem[7].classList.contains('solid') && arrListItem[8].classList.contains('solid')
-        ){
-            $('.playerTwo').css('display', 'block');
-            $('.draw').css('display', 'none')
-        }
+        newArr.forEach((item)=>{
+            if(arrListItem[item[0]].classList.contains('solid') && arrListItem[item[1]].classList.contains('delete') && arrListItem[item[2]].classList.contains('solid')){
+                $('.playerTwo').css('display', 'block');
+                $('.draw').css('display', 'none')
+            }
+        })
     }
 
     function draw(){
